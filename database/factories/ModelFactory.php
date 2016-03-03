@@ -24,14 +24,14 @@ $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Models\Tasklist::class, function (Faker\Generator $faker) {
     return [
-      'name' => $faker->sentence,
+      'name' => $faker->word,
       'color' => $faker->hexColor,
     ];
 });
 
 $factory->define(App\Models\Task::class, function (Faker\Generator $faker) {
     return [
-      'name' => $faker->sentence,
+      'name' => $faker->word,
       'description' => $faker->text,
       'dueDate' => \Carbon\Carbon::createFromTimestamp($faker->dateTimeBetween('now', '+1 years')->getTimestamp()),
       'favorite' => $faker->boolean()
