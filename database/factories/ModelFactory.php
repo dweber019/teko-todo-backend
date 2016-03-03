@@ -32,7 +32,7 @@ $factory->define(App\Models\Tasklist::class, function (Faker\Generator $faker) {
 $factory->define(App\Models\Task::class, function (Faker\Generator $faker) {
     return [
       'name' => $faker->word,
-      'description' => $faker->text,
+      'description' => $faker->realText(150),
       'dueDate' => \Carbon\Carbon::createFromTimestamp($faker->dateTimeBetween('now', '+1 years')->getTimestamp()),
       'favorite' => $faker->boolean()
     ];
