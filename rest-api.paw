@@ -5,7 +5,7 @@
     <databaseInfo>
         <version>134481920</version>
         <UUID>2B9E8327-158A-4FBE-A6D7-9AC46A85A59E</UUID>
-        <nextObjectID>174</nextObjectID>
+        <nextObjectID>177</nextObjectID>
         <metadata>
             <plist version="1.0">
                 <dict>
@@ -63,29 +63,29 @@
     <object type="LMENVIRONMENT" id="z102">
         <attribute name="uuid" type="string">3DEF9014-F243-457A-9C45-0B585A7FF933</attribute>
         <attribute name="order" type="int64">0</attribute>
-        <attribute name="name" type="string">Default Environment</attribute>
+        <attribute name="name" type="string">local</attribute>
         <relationship name="domain" type="0/1" destination="LMENVIRONMENTDOMAIN" idrefs="z105"></relationship>
-        <relationship name="variablesvalues" type="0/0" destination="LMENVIRONMENTVARIABLEVALUE" idrefs="z174 z173"></relationship>
+        <relationship name="variablesvalues" type="0/0" destination="LMENVIRONMENTVARIABLEVALUE" idrefs="z173 z174"></relationship>
     </object>
     <object type="LMENVIRONMENTVARIABLE" id="z103">
         <attribute name="uuid" type="string">A24E9E97-7B8E-4766-911B-6DA63C6405DF</attribute>
         <attribute name="order" type="int64">1</attribute>
         <attribute name="name" type="string">token</attribute>
         <relationship name="domain" type="0/1" destination="LMENVIRONMENTDOMAIN" idrefs="z105"></relationship>
-        <relationship name="values" type="0/0" destination="LMENVIRONMENTVARIABLEVALUE" idrefs="z174"></relationship>
+        <relationship name="values" type="0/0" destination="LMENVIRONMENTVARIABLEVALUE" idrefs="z177 z174"></relationship>
     </object>
     <object type="LMENVIRONMENTVARIABLE" id="z104">
         <attribute name="uuid" type="string">3750C9B9-B641-415D-A25A-D663227FB81D</attribute>
         <attribute name="order" type="int64">0</attribute>
         <attribute name="name" type="string">api-endpoint</attribute>
         <relationship name="domain" type="0/1" destination="LMENVIRONMENTDOMAIN" idrefs="z105"></relationship>
-        <relationship name="values" type="0/0" destination="LMENVIRONMENTVARIABLEVALUE" idrefs="z173"></relationship>
+        <relationship name="values" type="0/0" destination="LMENVIRONMENTVARIABLEVALUE" idrefs="z175 z173"></relationship>
     </object>
     <object type="LMENVIRONMENTDOMAIN" id="z105">
         <attribute name="uuid" type="string">78B6FEE5-CFA8-4694-ADBD-FBA85AA10DE6</attribute>
         <attribute name="order" type="int64">0</attribute>
         <attribute name="name" type="string">Default Domain</attribute>
-        <relationship name="environments" type="0/0" destination="LMENVIRONMENT" idrefs="z102"></relationship>
+        <relationship name="environments" type="0/0" destination="LMENVIRONMENT" idrefs="z102 z176"></relationship>
         <relationship name="variables" type="0/0" destination="LMENVIRONMENTVARIABLE" idrefs="z103 z104"></relationship>
     </object>
     <object type="LMKEYVALUE" id="z106">
@@ -887,6 +887,23 @@
     <object type="LMENVIRONMENTVARIABLEVALUE" id="z174">
         <attribute name="value" type="string">[{"data":{"request":"94E67A0B-C1CF-40FA-9F60-0B2776078AAC","keyPath":["token"],"format":0},"identifier":"com.luckymarmot.ResponseBodyPathDynamicValue"}]</attribute>
         <relationship name="environment" type="1/1" destination="LMENVIRONMENT" idrefs="z102"></relationship>
+        <relationship name="variable" type="1/1" destination="LMENVIRONMENTVARIABLE" idrefs="z103"></relationship>
+    </object>
+    <object type="LMENVIRONMENTVARIABLEVALUE" id="z175">
+        <attribute name="value" type="string">https://teko-todo-backend.w3tec.ch</attribute>
+        <relationship name="environment" type="1/1" destination="LMENVIRONMENT" idrefs="z176"></relationship>
+        <relationship name="variable" type="1/1" destination="LMENVIRONMENTVARIABLE" idrefs="z104"></relationship>
+    </object>
+    <object type="LMENVIRONMENT" id="z176">
+        <attribute name="uuid" type="string">9B44528B-95AE-4E3B-873B-08762FB0213A</attribute>
+        <attribute name="order" type="int64">1</attribute>
+        <attribute name="name" type="string">Prod</attribute>
+        <relationship name="domain" type="0/1" destination="LMENVIRONMENTDOMAIN" idrefs="z105"></relationship>
+        <relationship name="variablesvalues" type="0/0" destination="LMENVIRONMENTVARIABLEVALUE" idrefs="z177 z175"></relationship>
+    </object>
+    <object type="LMENVIRONMENTVARIABLEVALUE" id="z177">
+        <attribute name="value" type="string">[{"data":{"request":"94E67A0B-C1CF-40FA-9F60-0B2776078AAC","keyPath":["token"],"format":0},"identifier":"com.luckymarmot.ResponseBodyPathDynamicValue"}]</attribute>
+        <relationship name="environment" type="1/1" destination="LMENVIRONMENT" idrefs="z176"></relationship>
         <relationship name="variable" type="1/1" destination="LMENVIRONMENTVARIABLE" idrefs="z103"></relationship>
     </object>
 </database>
