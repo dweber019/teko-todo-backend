@@ -8,13 +8,23 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+/**
+ * Class TaskController
+ * @package App\Http\Controllers
+ */
 class TaskController extends ResourceController
 {
+    /**
+     * @return Task
+     */
     protected function getModel()
     {
         return new Task;
     }
 
+    /**
+     * @return mixed
+     */
     public function getFavorites()
     {
         $tasks = parent::index(true);
@@ -24,6 +34,9 @@ class TaskController extends ResourceController
         return ApiResponse::respond(array_values($favoriteTasks->toArray()));
     }
 
+    /**
+     * @return mixed
+     */
     public function getArchived()
     {
         $tasks = parent::index(true);

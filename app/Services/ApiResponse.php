@@ -3,6 +3,10 @@
 
 use Illuminate\Support\Facades\Response;
 
+/**
+ * Class ApiResponse
+ * @package App\Services
+ */
 class ApiResponse {
 
     /**
@@ -13,20 +17,35 @@ class ApiResponse {
         return ApiResponse::respondWithError($details, $message, 404);
     }
 
+    /**
+     * @param array $details
+     * @param string $message
+     * @return mixed
+     */
     public static function respondForbidden($details = [], $message = 'Forbidden!'){
         return ApiResponse::respondWithError($details, $message, 403);
     }
 
+    /**
+     * @param array $details
+     * @param string $message
+     * @return mixed
+     */
     public static function respondBadRequest($details = [], $message = 'Bad request!'){
         return ApiResponse::respondWithError($details, $message, 400);
     }
 
+    /**
+     * @param array $details
+     * @param string $message
+     * @return mixed
+     */
     public static function respondInternalError($details = [], $message = 'Internal error!'){
         return ApiResponse::respondWithError($details, $message, 500);
     }
 
     /**
-     * @param array $data
+     * @param array $details
      * @param string $message
      * @return mixed
      */

@@ -6,10 +6,19 @@ use App\Models\Task;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
+/**
+ * Class TaskPolicy
+ * @package App\Policies
+ */
 class TaskPolicy
 {
     use HandlesAuthorization;
 
+    /**
+     * @param $user
+     * @param $ability
+     * @return bool
+     */
     public function before($user, $ability)
     {
         if ($user->hasRole('admin')) {

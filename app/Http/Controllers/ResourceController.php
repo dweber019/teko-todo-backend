@@ -26,7 +26,7 @@ abstract class ResourceController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return mixed
      */
     public function index($internal = false)
     {
@@ -48,7 +48,7 @@ abstract class ResourceController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @return Response
+     * @return mixed
      */
     public function store()
     {
@@ -77,7 +77,7 @@ abstract class ResourceController extends Controller
      * Display the specified resource.
      *
      * @param  int $id
-     * @return Response
+     * @return mixed
      */
     public function show($id, $internal = false)
     {
@@ -107,7 +107,7 @@ abstract class ResourceController extends Controller
      * Update the specified resource in storage.
      *
      * @param  int $id
-     * @return Response
+     * @return mixed
      */
     public function update($id)
     {
@@ -142,7 +142,7 @@ abstract class ResourceController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int $id
-     * @return Response
+     * @return mixed
      */
     public function destroy($id)
     {
